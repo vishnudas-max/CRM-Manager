@@ -33,3 +33,4 @@ Thumbs.db
 
 # PyCharm
 .idea/
+db.sqlite3
