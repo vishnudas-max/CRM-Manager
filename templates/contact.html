@@ -1,0 +1,59 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 40px auto; text-align: center; font-family: Arial, sans-serif;">
+  
+  <h1 style="color: #2d3748;"> Welcome to the HighLevel CRM Integration</h1>
+
+  {% if update_success %}
+    <!-- Success Message -->
+    <div style="background-color: #48bb78; color: white; padding: 20px; border-radius: 8px; margin: 20px 0;">
+      <h2 style="margin: 0 0 15px 0;">Contact Updated Successfully!</h2>
+      <div style="text-align: left; background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 5px;">
+        <p><strong>Contact ID:</strong> {{ contact_id }}</p>
+        <p><strong>Name:</strong> {{ first_name }} {{ last_name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        {% if phone %}
+        <p><strong>Phone:</strong> {{ phone }}</p>
+        {% endif %}
+        <hr style="border: 1px solid rgba(255,255,255,0.3); margin: 10px 0;">
+        <p><strong>Custom Field "DFS Booking Zoom Link" has been updated to:</strong></p>
+        <p style="background-color: rgba(255,255,255,0.2); padding: 8px; border-radius: 4px; font-family: monospace; font-size: 14px;">{{ custom_field_value }}</p>
+        <p style="font-size: 12px; opacity: 0.8; margin-top: 10px;"><strong>Field ID:</strong> {{ custom_field_id }}</p>
+      </div>
+    </div>
+  {% else %}
+    <!-- Initial State -->
+    <p style="font-size: 16px; color: #4a5568; margin-top: 20px;">
+      You have successfully authorized your access token. From here, you can:
+    </p>
+
+    <ul style="list-style: none; padding: 0; color: #2d3748; font-size: 16px; margin: 20px 0;">
+      <li> Fetch a random contact</li>
+      <li> Update the contact's custom field <strong>"DFS Booking Zoom Link"</strong> with the value <code>TEST</code></li>
+      <li> Logout and clear session data</li>
+    </ul>
+  {% endif %}
+
+  <div style="margin-top: 30px;">
+    <a href="{% url 'getcontact' %}">
+      <button style="background-color: #0066eb; border-radius: 8px; border: none; padding: 12px 24px; color: white; font-size: 16px; cursor: pointer; margin-right: 10px;">
+        {% if update_success %}
+           Update Another Contact
+        {% else %}
+           Get Random Contact & Update Field
+        {% endif %}
+      </button>
+    </a>
+
+    <a href="{% url 'logout' %}">
+      <button style="background-color: #e53e3e; border-radius: 8px; border: none; padding: 12px 24px; color: white; font-size: 16px; cursor: pointer;">
+         Logout
+      </button>
+    </a>
+  </div>
+
+
+</div>
+{% endblock content %}
