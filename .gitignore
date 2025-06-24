@@ -1,0 +1,35 @@
+# Django
+*.py[cod]
+__pycache__/
+db.sqlite3
+*.sqlite3
+*.log
+
+# Django media/static (optional if using cloud storage)
+media/
+staticfiles/
+static/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Pytest cache
+.pytest_cache/
+
+# Migrations (optional, if you want to reset DB regularly)
+**/migrations/*.py
+!*/migrations/__init__.py
+
+# PyCharm
+.idea/
