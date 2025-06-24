@@ -1,0 +1,13 @@
+<!-- templates/index.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-3xl text-green-800">Hi, Welcome</h1>
+<a href="{% url 'start_auth' %}">
+  <button
+    style="background-color: rgb(0, 102, 235); border-radius: 10px; border-style: none; padding-block: 10px; padding-inline: 5px; color:white; font-size: medium; cursor:pointer;">Connect
+    to high level</button>
+</a>
+
+{% endblock content %}
