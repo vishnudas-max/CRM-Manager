@@ -42,7 +42,7 @@ def get_access_token(request):
 
     
 
-#to get authorization code
+#to get authorization   code
 def start_auth(request):
     base_url = "https://marketplace.gohighlevel.com/oauth/chooselocation"
     params = {
