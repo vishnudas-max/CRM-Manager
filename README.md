@@ -33,7 +33,7 @@ source venv/bin/activate     # On Windows: venv\Scripts\activate
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/highlevel-crm-integration.git
+git clone https://github.com/vishnudas-max/CRM-Manager.git
 cd CRM-Manager
 ```
 
@@ -44,9 +44,10 @@ pip install path/to/requirement.txt
 ```
 
 ### 4.Add a .env File
-````
+
 Create a .env file in your root project directory with the following:
 Example .env
+````
 HIGHLEVEL_CLIENT_ID = your-client-id-here
 HIGHLEVEL_CLIENT_SECRET = your-client-secret-here
 HIGHLEVEL_REDIRECT_URI = your redirect url here
@@ -96,8 +97,3 @@ CRM-Manager/
 📬 Contact
 For any questions or improvements, feel free to raise an issue or contact me directly.
 
-
----
-
-Let me know if you want help auto-generating a `requirements.txt` or converting this into a PDF!
-```
